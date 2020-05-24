@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "HexoとGithub Pagesで簡単にブログを作る"
-description: "A graphic designer is a professional within the graphic design and graphic arts industry."
+title: "JekyllとGithub Pagesで簡単にブログを作る"
 date: 2020-05-23
-feature_image: images/road.jpg
+feature_image: images/2020-05-24/thumbnail.png
 tags: [tips, work]
 ---
 
@@ -30,10 +29,9 @@ GitHubPagesとはGitHubによる静的サイトのホスティングサービス
 GitHubのアカウントがあれば無料で使用することが出来るので、気軽にブログを始める事ができます。
 ちょっと前まではブログを作るとなるとWordpressとかを使う必要がありましたが、サーバーのレンタル料金がかかってしまうので、それが無料になるのは素晴らしい事です。
 
-
 HexoとGithubPageの関係を絵で表すと以下のようになります。
 
-![jekyll-github](2020-05-24/images/jekyll-github-pages.png)
+![jekyll-github](images/2020-05-24/jekyll-github-pages.png)
 
 全体的な流れは以下のようになります。
 ①マークダウン方式の記事を作成<br>
@@ -43,10 +41,10 @@ HexoとGithubPageの関係を絵で表すと以下のようになります。
 
 では実際にブログを作成して公開するまでの手順を説明します。
 
-1.必要なライブラリのダウンロード
-・Jekyllのダウンロード
-2.GitHubアカウントの登録
-2.GitHubリポジトリの作成
+1. 環境構築(RubyとJekyllのインストール)
+1. ブログテーマのダウンロード
+1. テスト記事の投稿
+1. GitHub Pagesに公開
 
 ### 環境構築
 #### Rubyのインストール
@@ -87,12 +85,13 @@ $ bundle exec jekyll serve
 ```
 http://localhost:4000 にアクセスして以下のようにテーマが反映されている事を確認します。
 
-![scriptor_template](2020-05-24/images/scriptor_template.png)
+![scriptor_template](images/2020-05-24/scriptor_template.png)
 
-試しにマークダウンファイルを作成して自分でも記事が作成出来る事を確認しましょう。
+### テスト記事の作成
+マークダウンファイルを作成して自分でも記事が作成出来る事を確認しましょう。
 
 以下ディレクトリ配下に2020-01-01-test.mdというマークダウンファイルを作成
-/Users/kankimura/Scriptor-Jekyll-Theme/_posts
+/Users/<username>/Scriptor-Jekyll-Theme/_posts
 
 以下内容を記述して保存
 ```
@@ -106,62 +105,67 @@ date: 2020-01-01
 ```
 http://localhost:4000 を更新すると作成した記事が反映されていることが分かります。
 
-![test-article](2020-05-24/images/test-article.png)
+![test-article](images/2020-05-24/test-article.png)
 
 今後記事を作成するする際はこのようにマークダウンファイルを作成してローカルで確認後にGitHubPagesにアップして公開する流れになります。
 
 このままだとダウンロードしたままの情報が残ってしまいますので最低限以下は変更しておきましょう。
 
-不要なマークダウンファイルを削除
-筆者情報を変更
-/Users/kankimura/Scriptor-Jekyll-Theme/_data/author.json
-不要なSNS情報を削除
-/Users/kankimura/Scriptor-Jekyll-Theme/_data/social.json
-Aboutページの編集
-/Users/kankimura/Scriptor-Jekyll-Theme/about.md
+* 以下ディレクトリ配下の不要なマークダウンファイルを削除
 
- ### GitHub Pagesへ公開
+/Users/<username>/Scriptor-Jekyll-Theme/_posts
 
- #### GitHubアカウントの作成
+* 以下の筆者情報を変更
 
- ### Gitのインストール
+/Users/<username>/Scriptor-Jekyll-Theme/_data/author.json
 
- ### リポジトリの作成
+* Aboutページの編集
 
- ### GitHub Pagesへ公開
+/Users/<username>/Scriptor-Jekyll-Theme/about.md
 
- 
+### GitHub Pagesへ公開
 
+#### GitHubアカウントの作成
+ [GitHubの公式サイト](https://github.com/join){:target="_blank"}でアカウントを登録します。
 
-参考
-http://jmcglone.com/guides/github-pages/
-https://jekyllrb.com/docs/
-https://marbles.hatenablog.com/entry/2019/01/16/221417
+### リポジトリの作成
+ 作成したアカウントでブログ用のリポジトリを作成します。(作成方法は以下を参考)
+ リポジトリの名前は「<username>.git.io」として下さい。
+
+[リポジトリ新規作成方法](https://help.github.com/ja/enterprise/2.16/user/github/working-with-github-pages/creating-a-github-pages-site-with-jekyll)
+
+### Gitのインストール
+ 今回はパッケージ管理ツールのHomebrewでインストールしました。
+ Homebrewがインストールされているか確認
+ ```
+ $ brew -v
+ ```
+ バージョン情報が出力されない場合はHomebrewをインストールする。
+ ```
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+ ```
+Homebrewでgitをインストールする。
+```
+$ brew install git
+```
+### GitHub Pagesへ公開
+ローカルリポジトリを作成してGitHubで作成してしたリモートリポジトリにコミット
+```
+$ cd ~/blogs
+$ git init        //ローカルリポジトリを作成
+$ git add .       //コミット対象ファイル追加
+$ git commit -m "initial commit"    //コミット対象ファイルをローカルリポジトリにコミット
+$ git remote set-url origin git@github.com:<username>/<username>.github.io.git    //コミット対象のリポジトリURLを指定
+$ git push origin master
+```
+GitHubでリポジトリを見ると上記のコミット内容が反映されているはずです。
+https://<username>.github.io/ にアクセルするとテーマが反映されている事を確認できます。
+GitHub上で反映されているけどブラウザで反映されていない場合は少し時間を置いてから確認してみて下さい。
+
+これでブログが公開されましたので、あとはローカルで記事を作成して完成したらGitHubに公開するという流れで記事を作成することが出来ます。
+
+*参考*<br>
+http://jmcglone.com/guides/github-pages/<br>
+https://jekyllrb.com/docs/<br>
+https://marbles.hatenablog.com/entry/2019/01/16/221417<br>
 https://qiita.com/stkdev/items/0e2df27736acbea9bd26
-
-・リポジトリの削除
-https://qiita.com/PlanetMeron/items/4d164eff7bff2243cf06
-
-・テーマを適用する方法
-https://howpon.com/10476
-
-今後やってみたい事
-・コメントフォームの実装
-http://kikei.github.io/
-https://www.kooslooijesteijn.net/blog/comments-system-for-static-website
-https://www.talkyard.io/plans
-->talkyardは月1.9ユーロという値段で使えるので良さそう
-
-
-・gitの最低限の使用方法
-
-git init：ローカルリポジトリを作成する
-git add：対象ファイルをコミット対象に追加する
-git commit：対象ファイルをコミットする
-git remote add <name> <url>:リモートリポジトリのurlに名称を付ける。
-　（これによってpushする際にurlを記述しなくてよくなる。）
-　URL:git@github.com:<username>/<repo-name>.git
-git push　<name> master:リモートリポジトリのマスターブランチにプッシュにコミットを反映する
-
-git checkout：ブランチを切り替える
-git merge
