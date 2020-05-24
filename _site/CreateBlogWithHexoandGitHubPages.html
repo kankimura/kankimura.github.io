@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HexoとGithub Pagesで簡単にブログを作る</title>
+  <meta name="description" content="A graphic designer is a professional within the graphic design and graphic arts industry.">
+  <link rel="canonical" href="http://localhost:4000/CreateBlogWithHexoandGitHubPages">
+  <link rel="alternate" type="application/rss+xml" title="A little bit of everything Feed"
+    href="http://localhost:4000/feed.xml">
+  
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
+  
+  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CNoto+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <div id="page" class="site">
+    <div class="inner">
+      <header class="site-header">
+  
+  <p class="site-title"><a class="logo-text" href="/">A little bit of everything</a></p>
+  
+  <nav class="site-navigation">
+    <div class="site-navigation-wrap">
+      <h2 class="screen-reader-text">Main navigation</h2>
+      <ul class="menu">
+        
+        
+        
+        <li class="menu-item ">
+          <a class="" href="/">Home</a>
+        </li>
+        
+        
+        
+        <li class="menu-item ">
+          <a class="" href="/about/">About</a>
+        </li>
+        
+        
+        
+        <li class="menu-item ">
+          <a class="" href="/style-guide/">Style Guide</a>
+        </li>
+        
+        
+        
+        <li class="menu-item ">
+          <a class="" href="/tags/">Tags</a>
+        </li>
+        
+        
+        
+        <li class="menu-item ">
+          <a class="" href="https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme">Download</a>
+        </li>
+        
+      </ul><!-- .menu -->
+      <button id="menu-close" class="menu-toggle"><span class="screen-reader-text">Close Menu</span><span
+          class="icon-close" aria-hidden="true"></span></button>
+    </div><!-- .site-navigation-wrap -->
+  </nav><!-- .site-navigation -->
+  <button id="menu-open" class="menu-toggle"><span class="screen-reader-text">Open Menu</span><span class="icon-menu" aria-hidden="true"></span></button>
+</header>
+
+
+      <main class="main-content fadeInDown delay_075s">
+
+  <article class="post">
+    <header class="post-header">
+      <time class="post-date" datetime="2020-05-23">May 23, 2020</time>
+      <h1 class="post-title">HexoとGithub Pagesで簡単にブログを作る</h1>
+      <div class="post-meta">
+        By <span class="post-author">Kan Kimura</span><span class="post-tags"> in <a href="/tags/#tips" rel="tag">tips</a>, <a href="/tags/#work" rel="tag">work</a></span>
+      </div><!-- .post-meta -->
+      
+      <figure class="post-thumbnail image-card width-wide">
+        <img src="/images/road.jpg" alt="HexoとGithub Pagesで簡単にブログを作る">
+      </figure><!-- .post-thumbnail -->
+      
+    </header><!-- .post-header -->
+    <div class="post-content">
+      <p>hexoとGithub Pageでブログを作成したので、作成方法を説明します。
+無料で簡単に作ることが出来たので、個人ブログをもちたい場合はオススメです。</p>
+
+<!--more-->
+
+<h1 id="jekyllとは">Jekyllとは？</h1>
+
+<p>Jekyll(ジキル)とは静的サイトジェネレーターの一つです。
+静的サイトジェネレータとはマークダウン式の記事とテーマをもとに静的ファイル（html/css/javascript）を自動生成してくれるツールです。<br />
+自動生成されたファイルをGitHubPages等のホスティングサイトにアップすることでブログを簡単に公開することが出来ます。<br />
+マークダウン方式の書き方さえ分かればコードは書く必要がないので非常に楽です。<br />
+JekyllはRubyという言語で作られています。
+Jekyll以外にも主要なものでGatsby、Hugo、Hexoといったものがありますが、私が知る範囲ではJekyllとHexoはテーマをサイトからダウンロード出来てマークダウン記事と作成したするだけで良いので、簡単にやりたい場合はどちらかを選ぶと思います。
+Hexoは中国が開発元で、ググって見ても中国語の情報が多かったのでJekyllにしました。</p>
+
+<p>マークダウン式がわからない方は以下を参考にしてみて下さい。
+<a href="https://qiita.com/Blueman81/items/72ca43681d16d44e21ad" target="_blank">https://qiita.com/Blueman81/items/72ca43681d16d44e21ad</a></p>
+
+<h1 id="github-pageとは">Github Pageとは？</h1>
+<p>GitHubPagesとはGitHubによる静的サイトのホスティングサービスです。
+GitHubのアカウントがあれば無料で使用することが出来るので、気軽にブログを始める事ができます。
+ちょっと前まではブログを作るとなるとWordpressとかを使う必要がありましたが、サーバーのレンタル料金がかかってしまうので、それが無料になるのは素晴らしい事です。</p>
+
+<p>HexoとGithubPageの関係を絵で表すと以下のようになります。</p>
+
+<p><img src="2020-05-24/images/jekyll-github-pages.png" alt="jekyll-github" /></p>
+
+<p>全体的な流れは以下のようになります。
+①マークダウン方式の記事を作成<br />
+②記事とテーマをもとにhtml/css/javascriptを生成<br />
+③生成されたファイルをGitHubPagesにアップ<br />
+④ブラウザからアクセスし、GitHubPagesにアップされたファイルを画面に表示する。</p>
+
+<p>では実際にブログを作成して公開するまでの手順を説明します。</p>
+
+<p>1.必要なライブラリのダウンロード
+・Jekyllのダウンロード
+2.GitHubアカウントの登録
+2.GitHubリポジトリの作成</p>
+
+<h3 id="環境構築">環境構築</h3>
+<h4 id="rubyのインストール">Rubyのインストール</h4>
+<p>バージョン管理のためにrbenv,ruby-builをインストール</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ brew install rbenv ruby-build
+$ echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bash_profile
+$ source ~/.bash_profile
+</code></pre></div></div>
+<p>インストールするRubyのバージョンを指定してRubyをインストール</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rbenv install -l      //これで表示される最新のバージョンを指定する
+$ rbenv install 2.6.0
+$ rbenv global 2.6.0    //デフォルトで使用するバージョンを指定
+</code></pre></div></div>
+<h4 id="jekyllのインストール">Jekyllのインストール</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem install jekyll bundler    //Gem管理ツールbundlerとJekyllのインストール
+$ jekyll new blog               //Jekyll用のディレクトリを作成
+$ cd blog
+$ bundle exec jekyll serve      //Jekyllをローカルで起動
+</code></pre></div></div>
+<p>http://localhost:4000 へアクセスしローカル環境でサイトが表示されていることを確認します。
+ローカルで確認する際はbundle exec jekyll serveというコマンドでJekyllを起動する必要があります。
+起動中に記事を編集しても反映されるので編集しても再起動する必要はありません。
+このままだとインターネットからアクセス出来ないので、GitHub Pagesに公開する必要があります。
+その前にブログで使用するテーマをダウンロードしたいと思います。</p>
+
+<h3 id="テーマのダウンロード">テーマのダウンロード</h3>
+<p>今のままだとデフォルトのテーマで味気がないので、Jekyllの公式サイトから無料で使用できるテーマをダウンロードしたいと思います。
+公式サイトを見ると有料と無料の色々なテーマがありますが、 今回は<a href="https://jekyllthemes.io/jekyll-blog-themes" target="_blank">ブログ用のテーマ</a>から無料のものを選択肢します。
+私は <a href="https://jekyllthemes.io/theme/scriptor" target="_blank">Scriptor</a> というなかなかイケてるテーマがあったのでそれにしました。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ~/     //ホームディレクトリに移動（これは好きな場所でOK）
+$ git clone https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme.git
+$ bundle exec jekyll serve
+</code></pre></div></div>
+<p>http://localhost:4000 にアクセスして以下のようにテーマが反映されている事を確認します。</p>
+
+<p><img src="2020-05-24/images/scriptor_template.png" alt="scriptor_template" /></p>
+
+<p>試しにマークダウンファイルを作成して自分でも記事が作成出来る事を確認しましょう。</p>
+
+<p>以下ディレクトリ配下に2020-01-01-test.mdというマークダウンファイルを作成
+/Users/kankimura/Scriptor-Jekyll-Theme/_posts</p>
+
+<p>以下内容を記述して保存</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: post
+title: "test"
+description: "test"
+date: 2020-01-01
+---
+テストですよ。
+</code></pre></div></div>
+<p>http://localhost:4000 を更新すると作成した記事が反映されていることが分かります。</p>
+
+<p><img src="2020-05-24/images/test-article.png" alt="test-article" /></p>
+
+<p>今後記事を作成するする際はこのようにマークダウンファイルを作成してローカルで確認後にGitHubPagesにアップして公開する流れになります。</p>
+
+<p>不要なマークダウンファイルを削除
+筆者情報を変更
+/Users/kankimura/Scriptor-Jekyll-Theme/_data/author.json
+不要なSNS情報を削除
+/Users/kankimura/Scriptor-Jekyll-Theme/_data/social.json
+Aboutページの編集
+/Users/kankimura/Scriptor-Jekyll-Theme/about.md</p>
+
+<p>参考
+http://jmcglone.com/guides/github-pages/
+https://jekyllrb.com/docs/
+https://marbles.hatenablog.com/entry/2019/01/16/221417
+https://qiita.com/stkdev/items/0e2df27736acbea9bd26</p>
+
+<p>・リポジトリの削除
+https://qiita.com/PlanetMeron/items/4d164eff7bff2243cf06</p>
+
+<p>・テーマを適用する方法
+https://howpon.com/10476</p>
+
+<p>今後やってみたい事
+・コメントフォームの実装
+http://kikei.github.io/
+https://www.kooslooijesteijn.net/blog/comments-system-for-static-website
+https://www.talkyard.io/plans
+-&gt;talkyardは月1.9ユーロという値段で使えるので良さそう</p>
+
+<p>・gitの最低限の使用方法</p>
+
+<p>git init：ローカルリポジトリを作成する
+git add：対象ファイルをコミット対象に追加する
+git commit：対象ファイルをコミットする
+git remote add <name> <url>:リモートリポジトリのurlに名称を付ける。
+　（これによってpushする際にurlを記述しなくてよくなる。）
+　URL:git@github.com:<username>/<repo-name>.git
+git push　<name> master:リモートリポジトリのマスターブランチにプッシュにコミットを反映する</name></repo-name></username></url></name></p>
+
+<p>git checkout：ブランチを切り替える
+git merge</p>
+
+    </div><!-- .post-content -->
+    <div class="post-share">
+      <span>Share:</span>
+      <a target="_blank"
+        href="https://twitter.com/intent/tweet?text=Hexo%E3%81%A8Github%20Pages%E3%81%A7%E7%B0%A1%E5%8D%98%E3%81%AB%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E4%BD%9C%E3%82%8B&amp;url=http://localhost:4000/CreateBlogWithHexoandGitHubPages" rel="noopener">Twitter</a>
+      <a target="_blank"
+        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/CreateBlogWithHexoandGitHubPages&amp;t=Hexo%E3%81%A8Github%20Pages%E3%81%A7%E7%B0%A1%E5%8D%98%E3%81%AB%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E4%BD%9C%E3%82%8B" rel="noopener">Facebook</a>
+    </div><!-- .share-post -->
+    <div class="author-box">
+      
+      <div class="author-avatar" style="background-image: url('images/author.png')"><span class="screen-reader-text">Kan Kimura's Picture</span></div>
+      
+      <div class="author-details">
+        <h2 class="author-title">About Kan Kimura</h2>
+        <div class="author-bio"><p>東京の某ITコンサルティング会社勤務のコンサル兼エンジニアです。スケートボード、ロードバイク、写真、音楽、DIYを愛しています。</p>
+</div>
+        
+        
+      </div><!-- .author-details -->
+    </div><!-- .author-box -->
+  </article><!-- .post -->
+
+  
+    <div class="comments-area">
+  <div class="comments-inner">
+    <h2 class="comments-title">Comments</h2>
+    <div id="disqus_thread"></div>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus</a>.</noscript>
+  </div><!-- .comments-inner -->
+</div><!-- .comments-area -->
+
+<script type="text/javascript">
+  var disqus_shortname = 'justgoodthemes';
+  var disqus_developer = 0;
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+  
+
+</main><!-- .main-content -->
+      <footer class="site-footer">
+  <div class="offsite-links">
+    
+      
+<a href="https://twitter.com/" target="_blank" rel="noopener">
+  <span class="fa-twitter" aria-hidden="true"></span>
+  <span class="screen-reader-text">Twitter</span>
+</a>
+
+<a href="https://github.com/" target="_blank" rel="noopener">
+  <span class="fa-github" aria-hidden="true"></span>
+  <span class="screen-reader-text">GitHub</span>
+</a>
+
+<a href="https://www.instagram.com/" target="_blank" rel="noopener">
+  <span class="fa-instagram" aria-hidden="true"></span>
+  <span class="screen-reader-text">Instagram</span>
+</a>
+
+<a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+  <span class="fa-linkedin" aria-hidden="true"></span>
+  <span class="screen-reader-text">LinkedIn</span>
+</a>
+
+    
+  </div><!-- .offsite-links -->
+  <div class="footer-bottom">
+    <div class="site-info">
+      <p>© Scriptor all rights reserved. Theme by <a href="https://www.justgoodthemes.com">JustGoodThemes</a>.</p>
+
+    </div><!-- .site-info -->
+    <a href="#page" id="back-to-top" class="back-to-top"><span class="screen-reader-text">Back to the top </span>&#8593;</a>
+  </div><!-- .footer-bottom -->
+</footer><!-- .site-footer -->
+
+    </div><!-- .inner -->
+  </div><!-- .site -->
+
+  <!-- Scripts -->
+  
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+  <script src="/assets/js/plugins.js"></script>
+  <script src="/assets/js/custom.js"></script>
+
+</body>
+</html>
