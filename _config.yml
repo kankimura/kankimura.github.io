@@ -10,12 +10,12 @@ lang: ja
 
 # Site title
 title: "A little bit of everything"
-email: 
-twitter_username: 
+email:
+twitter_username:
 github_username:  kankimura
 
 # A description of your site for meta tag, search engine results.
-description: "Scriptor is a minimal, clean, modern & responsive Jekyll theme for writers"
+description: "全てのちょっと〜止まらない好奇心〜"
 
 # The subpath of your site, e.g. /blog, for generating urls.
 baseurl:
@@ -34,13 +34,11 @@ navigation:
   - text: Home
     url: /
   - text: About
-    url: /about/
+    url: /about
   - text: Style Guide
-    url: /style-guide/
+    url: /style-guide
   - text: Tags
-    url: /tags/
-  - text: Download
-    url: https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme
+    url: /tags
 
 # The shortname for your Disqus site to enable comments.
 disqus: justgoodthemes
