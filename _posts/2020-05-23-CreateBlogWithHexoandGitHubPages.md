@@ -123,20 +123,20 @@ http://localhost:4000 を更新すると作成した記事が反映されてい�
 
 /Users/{username}/Scriptor-Jekyll-Theme/about.md
 
-### GitHub Pagesへ公開
+ ***
+
+### 4. GitHub Pagesへ公開
 
 #### GitHubアカウントの作成
  [GitHubの公式サイト](https://github.com/join){:target="_blank"}でアカウントを登録します。
 
- ***
-
-### 4. リポジトリの作成
+####リポジトリの作成
  作成したアカウントでブログ用のリポジトリを作成します。(作成方法は以下を参考)
  リポジトリの名前は「username.git.io」として下さい。
 
 [リポジトリ新規作成方法](https://help.github.com/ja/enterprise/2.16/user/github/working-with-github-pages/creating-a-github-pages-site-with-jekyll)
 
-### Gitのインストール
+#### Gitのインストール
  今回はパッケージ管理ツールのHomebrewでインストールしました。
  Homebrewがインストールされているか確認
  ```
@@ -150,7 +150,7 @@ Homebrewでgitをインストールする。
 ```
 $ brew install git
 ```
-### GitHub Pagesへ公開
+#### GitHub Pagesへ公開
 ローカルリポジトリを作成してGitHubで作成してしたリモートリポジトリにコミット
 ```
 $ cd ~/blogs

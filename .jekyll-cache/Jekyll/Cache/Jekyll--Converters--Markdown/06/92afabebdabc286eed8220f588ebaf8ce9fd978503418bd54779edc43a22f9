@@ -1,4 +1,4 @@
-I"A(<p>JekyllとGitHub Pageでブログを作成したので、作成方法を説明します。
+I"(<p>JekyllとGitHub Pageでブログを作成したので、作成方法を説明します。
 無料で簡単に作ることが出来たので、個人ブログをもちたい場合はオススメです。</p>
 
 <!--more-->
@@ -117,20 +117,20 @@ date: 2020-01-01
 
 <p>/Users/{username}/Scriptor-Jekyll-Theme/about.md</p>
 
-<h3 id="github-pagesへ公開">GitHub Pagesへ公開</h3>
+<hr />
+
+<h3 id="4-github-pagesへ公開">4. GitHub Pagesへ公開</h3>
 
 <h4 id="githubアカウントの作成">GitHubアカウントの作成</h4>
 <p><a href="https://github.com/join" target="_blank">GitHubの公式サイト</a>でアカウントを登録します。</p>
 
-<hr />
-
-<h3 id="4-リポジトリの作成">4. リポジトリの作成</h3>
-<p>作成したアカウントでブログ用のリポジトリを作成します。(作成方法は以下を参考)
+<p>####リポジトリの作成
+ 作成したアカウントでブログ用のリポジトリを作成します。(作成方法は以下を参考)
  リポジトリの名前は「username.git.io」として下さい。</p>
 
 <p><a href="https://help.github.com/ja/enterprise/2.16/user/github/working-with-github-pages/creating-a-github-pages-site-with-jekyll">リポジトリ新規作成方法</a></p>
 
-<h3 id="gitのインストール">Gitのインストール</h3>
+<h4 id="gitのインストール">Gitのインストール</h4>
 <p>今回はパッケージ管理ツールのHomebrewでインストールしました。
  Homebrewがインストールされているか確認</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ brew -v
@@ -141,7 +141,7 @@ date: 2020-01-01
 <p>Homebrewでgitをインストールする。</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ brew install git
 </code></pre></div></div>
-<h3 id="github-pagesへ公開-1">GitHub Pagesへ公開</h3>
+<h4 id="github-pagesへ公開">GitHub Pagesへ公開</h4>
 <p>ローカルリポジトリを作成してGitHubで作成してしたリモートリポジトリにコミット</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ~/blogs
 $ git init        //ローカルリポジトリを作成
